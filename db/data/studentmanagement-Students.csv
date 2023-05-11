@@ -1,0 +1,4 @@
+studentID;createdAt;createdBy;studentname;studentage;studentsex;studentcourse_courseID;bp_BusinessPartner
+20466922-7d57-4e76-b14c-e53fd97dcb11;2019-10-24;SYSTEM;Tharunika;6;Female;20466921-7d57-4e76-b14c-e53fd97dcb11;9980000448
+20466922-7d57-4e76-b14c-e53fd97dcb12;2019-10-24;SYSTEM;Mithra;1;Female;20466921-7d57-4e76-b14c-e53fd97dcb12;9980002245
+20466922-7d57-4e76-b14c-e53fd97dcb13;2019-10-24;SYSTEM;Arjun;5;Male;20466921-7d57-4e76-b14c-e53fd97dcb13;9980000230

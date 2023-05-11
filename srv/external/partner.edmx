@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:DataServices m:DataServiceVersion="2.0"
+        xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+        <Schema Namespace="c4codata"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
+            xmlns:sap="http://www.sap.com/Protocols/SAPData"
+            xmlns:c4c="http://www.sap.com/Protocols/C4CData">
+            <EntityType Name="Partner">
+                <Key>
+                    <PropertyRef Name="ObjectID"/>
+                </Key>
+                <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+                <Property Name="PartnerID" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" c4c:is-parent-internal-key="true" sap:label="Partner ID"/>
+                <Property Name="PartnerUUID" Type="Edm.Guid" Nullable="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Partner UUID"/>
+                <Property Name="LifeCycleStatusCode" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="LifeCycleStatusCodeText" c4c:value-help="PartnerLifeCycleStatusCodeCollection" sap:label="Status"/>
+                <Property Name="LifeCycleStatusCodeText" Type="Edm.String" Nullable="true" sap:label="Status Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="DUNS" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="D-U-N-S"/>
+                <Property Name="LegalFormCode" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="LegalFormCodeText" c4c:value-help="PartnerLegalFormCodeCollection" sap:label="Legal Form"/>
+                <Property Name="LegalFormCodeText" Type="Edm.String" Nullable="true" sap:label="Legal Form Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="PartnerABCClassificationCode" Type="Edm.String" Nullable="true" MaxLength="1" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="PartnerABCClassificationCodeText" c4c:value-help="PartnerPartnerABCClassificationCodeCollection" sap:label="ABC Classification"/>
+                <Property Name="PartnerABCClassificationCodeText" Type="Edm.String" Nullable="true" sap:label="ABC Classification Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="IndustrialSectorCode" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="IndustrialSectorCodeText" c4c:value-help="PartnerIndustrialSectorCodeCollection" sap:label="Industry"/>
+                <Property Name="IndustrialSectorCodeText" Type="Edm.String" Nullable="true" sap:label="Industry Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="ContactPermissionCode" Type="Edm.String" Nullable="true" MaxLength="1" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="ContactPermissionCodeText" c4c:value-help="PartnerContactPermissionCodeCollection" sap:label="Contact Permission"/>
+                <Property Name="ContactPermissionCodeText" Type="Edm.String" Nullable="true" sap:label="Contact Permission Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="BusinessPartnerFormattedName" Type="Edm.String" Nullable="true" MaxLength="480" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Business Partner Formatted Name"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Name"/>
+                <Property Name="AdditionalName" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Additional Name"/>
+                <Property Name="AdditionalName2" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Additional Name 2"/>
+                <Property Name="AdditionalName3" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Additional Name 3"/>
+                <Property Name="FormattedPostalAddressDescription" Type="Edm.String" Nullable="true" MaxLength="480" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Formatted Postal Address Description"/>
+                <Property Name="CountryCode" Type="Edm.String" Nullable="true" MaxLength="3" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="CountryCodeText" c4c:value-help="PartnerCountryCodeCollection" sap:label="Country/Region"/>
+                <Property Name="CountryCodeText" Type="Edm.String" Nullable="true" sap:label="Country/Region Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="StateCode" Type="Edm.String" Nullable="true" MaxLength="6" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="StateCodeText" c4c:context-property="CountryCode" c4c:value-help="PartnerStateCodeCollection" sap:label="State"/>
+                <Property Name="StateCodeText" Type="Edm.String" Nullable="true" sap:label="State Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="CareOfName" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="c/o"/>
+                <Property Name="AddressLine1" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Address Line 1"/>
+                <Property Name="AddressLine2" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Address Line 2"/>
+                <Property Name="HouseNumber" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="House Number"/>
+                <Property Name="Street" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Street"/>
+                <Property Name="AddressLine4" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Address Line 4"/>
+                <Property Name="AddressLine5" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Address Line 5"/>
+                <Property Name="District" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="District"/>
+                <Property Name="City" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="City"/>
+                <Property Name="DifferentCity" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Different City"/>
+                <Property Name="StreetPostalCode" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Postal Code"/>
+                <Property Name="County" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="County"/>
+                <Property Name="CompanyPostalCode" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Company Postal Code"/>
+                <Property Name="POBoxIndicator" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="P.O. Box Address"/>
+                <Property Name="POBox" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="P.O. Box"/>
+                <Property Name="POBoxPostalCode" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="P.O. Box Postal Code"/>
+                <Property Name="POBoxDeviatingCountryCode" Type="Edm.String" Nullable="true" MaxLength="3" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="POBoxDeviatingCountryCodeText" c4c:value-help="PartnerPOBoxDeviatingCountryCodeCollection" sap:label="P.O. Box Country/Region"/>
+                <Property Name="POBoxDeviatingCountryCodeText" Type="Edm.String" Nullable="true" sap:label="P.O. Box Country/Region Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="POBoxDeviatingStateCode" Type="Edm.String" Nullable="true" MaxLength="6" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="POBoxDeviatingStateCodeText" c4c:context-property="POBoxDeviatingCountryCode" c4c:value-help="PartnerPOBoxDeviatingStateCodeCollection" sap:label="P.O. Box State"/>
+                <Property Name="POBoxDeviatingStateCodeText" Type="Edm.String" Nullable="true" sap:label="P.O. Box State Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="POBoxDeviatingCity" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="P.O. Box City"/>
+                <Property Name="TimeZoneCode" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="TimeZoneCodeText" c4c:value-help="PartnerTimeZoneCodeCollection" sap:label="Time Zone"/>
+                <Property Name="TimeZoneCodeText" Type="Edm.String" Nullable="true" sap:label="Time Zone Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="Building" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Building"/>
+                <Property Name="Floor" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Floor"/>
+                <Property Name="Room" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Room"/>
+                <Property Name="Phone" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Phone"/>
+                <Property Name="Mobile" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Mobile"/>
+                <Property Name="Fax" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Fax"/>
+                <Property Name="Email" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="E-Mail"/>
+                <Property Name="WebSite" Type="Edm.String" Nullable="true" MaxLength="1280" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Web Site"/>
+                <Property Name="LanguageCode" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="LanguageCodeText" c4c:value-help="PartnerLanguageCodeCollection" sap:label="Language"/>
+                <Property Name="LanguageCodeText" Type="Edm.String" Nullable="true" sap:label="Language Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="BestReachedByCode" Type="Edm.String" Nullable="true" MaxLength="3" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="BestReachedByCodeText" c4c:value-help="PartnerBestReachedByCodeCollection" sap:label="Best Reached By"/>
+                <Property Name="BestReachedByCodeText" Type="Edm.String" Nullable="true" sap:label="Best Reached By Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="TotalPoints" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Total Points"/>
+                <Property Name="PartnerLevel" Type="Edm.String" Nullable="true" MaxLength="4" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="PartnerLevelText" c4c:value-help="PartnerPartnerLevelCollection" sap:label="Level"/>
+                <Property Name="PartnerLevelText" Type="Edm.String" Nullable="true" sap:label="Level Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="NormalisedPhone" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Normalized Phone"/>
+                <Property Name="NormalisedMobile" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Normalized Mobile"/>
+                <Property Name="CreatedOn" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created On"/>
+                <Property Name="CreatedBy" Type="Edm.String" Nullable="true" MaxLength="480" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created By"/>
+                <Property Name="CreatedByIdentityUUID" Type="Edm.Guid" Nullable="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Creation Identity UUID"/>
+                <Property Name="ChangedOn" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Changed On"/>
+                <Property Name="ChangedBy" Type="Edm.String" Nullable="true" MaxLength="480" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Changed By"/>
+                <Property Name="ChangedByIdentityUUID" Type="Edm.Guid" Nullable="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Last Change Identity UUID"/>
+                <Property Name="EntityLastChangedOn" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Entity Last Changed On"/>
+                <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+                <NavigationProperty Name="PartnerAddress" Relationship="c4codata.Partner_PartnerAddress" FromRole="Partner" ToRole="PartnerAddress"/>
+                <NavigationProperty Name="PartnerAttachment" Relationship="c4codata.Partner_PartnerAttachment" FromRole="Partner" ToRole="PartnerAttachment"/>
+                <NavigationProperty Name="PartnerHasPartnerContact" Relationship="c4codata.Partner_PartnerHasPartnerContact" FromRole="Partner" ToRole="PartnerHasPartnerContact"/>
+                <NavigationProperty Name="PartnerPrograms" Relationship="c4codata.Partner_PartnerPrograms" FromRole="Partner" ToRole="PartnerPrograms"/>
+                <NavigationProperty Name="PartnerSalesOrganisation" Relationship="c4codata.Partner_PartnerSalesOrganisation" FromRole="Partner" ToRole="PartnerSalesOrganisation"/>
+            </EntityType>
+            <EntityType Name="PartnerAttachment">
+                <Key>
+                    <PropertyRef Name="ObjectID"/>
+                </Key>
+                <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+                <Property Name="Binary" Type="Edm.Binary" MaxLength="Max" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="false" sap:filterable="false" sap:label="Binary"/>
+                <Property Name="CategoryCode" Type="Edm.String" Nullable="false" MaxLength="1" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:text="CategoryCodeText" c4c:value-help="PartnerAttachmentCategoryCodeCollection" sap:label="Category Code"/>
+                <Property Name="CategoryCodeText" Type="Edm.String" Nullable="true" sap:label="Category Code Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="CreatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created By"/>
+                <Property Name="CreatedOn" Type="Edm.DateTime" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Created On"/>
+                <Property Name="DocumentLink" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Document Link"/>
+                <Property Name="LastUpdatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Last Updated By"/>
+                <Property Name="LastUpdatedOn" Type="Edm.DateTime" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Last Updated On"/>
+                <Property Name="LinkWebURI" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Link Web URI"/>
+                <Property Name="MimeType" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Mime Type"/>
+                <Property Name="Name" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Name"/>
+                <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+                <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+                <Property Name="PartnerID" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="false" sap:creatable="true" sap:updatable="false" sap:filterable="true" c4c:is-parent-internal-key="true" sap:label="Partner ID"/>
+                <Property Name="SizeInkB" Type="Edm.Decimal" Nullable="true" Precision="31" Scale="14" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Size In KiloBytes"/>
+                <Property Name="TypeCode" Type="Edm.String" Nullable="true" MaxLength="5" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:text="TypeCodeText" c4c:value-help="PartnerAttachmentTypeCodeCollection" sap:label="Type Code"/>
+                <Property Name="TypeCodeText" Type="Edm.String" Nullable="true" sap:label="Type Code Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="UUID" Type="Edm.Guid" Nullable="false" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="UUID"/>
+            </EntityType>
+            <EntityType Name="PartnerAddress" c4c:parent-entity-type="Partner">
+                <Key>
+                    <PropertyRef Name="ObjectID"/>
+                </Key>
+                <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+                <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+                <Property Name="PartnerID" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" c4c:is-parent-internal-key="true" sap:label="Partner ID"/>
+                <Property Name="MainIndicator" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Main Address"/>
+                <Property Name="ShipTo" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="false" sap:label="Ship To"/>
+                <Property Name="DefaultShipTo" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="false" sap:label="Default Ship To"/>
+                <Property Name="BillTo" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="false" sap:label="Bill To"/>
+                <Property Name="DefaultBillTo" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="false" sap:label="Default Bill To"/>
+                <Property Name="FormattedPostalAddressDescription" Type="Edm.String" Nullable="true" MaxLength="480" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Formatted Postal Address Description"/>
+                <Property Name="CountryCode" Type="Edm.String" Nullable="true" MaxLength="3" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="CountryCodeText" c4c:value-help="PartnerAddressCountryCodeCollection" sap:label="Country/Region"/>
+                <Property Name="CountryCodeText" Type="Edm.String" Nullable="true" sap:label="Country/Region Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="StateCode" Type="Edm.String" Nullable="true" MaxLength="6" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="StateCodeText" c4c:context-property="CountryCode" c4c:value-help="PartnerAddressStateCodeCollection" sap:label="State"/>
+                <Property Name="StateCodeText" Type="Edm.String" Nullable="true" sap:label="State Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="CareOfName" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="c/o"/>
+                <Property Name="AddressLine1" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Address Line 1"/>
+                <Property Name="AddressLine2" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Address Line 2"/>
+                <Property Name="HouseNumber" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="House Number"/>
+                <Property Name="Street" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Street"/>
+                <Property Name="AddressLine4" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Address Line 4"/>
+                <Property Name="AddressLine5" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Address Line 5"/>
+                <Property Name="District" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="District"/>
+                <Property Name="City" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="City"/>
+                <Property Name="DifferentCity" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Different City"/>
+                <Property Name="StreetPostalCode" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Postal Code"/>
+                <Property Name="County" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="County"/>
+                <Property Name="CompanyPostalCode" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Company Postal Code"/>
+                <Property Name="POBoxIndicator" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="P.O. Box Address"/>
+                <Property Name="POBox" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="P.O. Box"/>
+                <Property Name="POBoxPostalCode" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="P.O. Box Postal Code"/>
+                <Property Name="POBoxDeviatingCountryCode" Type="Edm.String" Nullable="true" MaxLength="3" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="POBoxDeviatingCountryCodeText" c4c:value-help="PartnerAddressPOBoxDeviatingCountryCodeCollection" sap:label="P.O. Box Country/Region"/>
+                <Property Name="POBoxDeviatingCountryCodeText" Type="Edm.String" Nullable="true" sap:label="P.O. Box Country/Region Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="POBoxDeviatingStateCode" Type="Edm.String" Nullable="true" MaxLength="6" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="POBoxDeviatingStateCodeText" c4c:context-property="POBoxDeviatingCountryCode" c4c:value-help="PartnerAddressPOBoxDeviatingStateCodeCollection" sap:label="P.O. Box State"/>
+                <Property Name="POBoxDeviatingStateCodeText" Type="Edm.String" Nullable="true" sap:label="P.O. Box State Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="POBoxDeviatingCity" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="P.O. Box City"/>
+                <Property Name="TimeZoneCode" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="TimeZoneCodeText" c4c:value-help="PartnerAddressTimeZoneCodeCollection" sap:label="Time Zone"/>
+                <Property Name="TimeZoneCodeText" Type="Edm.String" Nullable="true" sap:label="Time Zone Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="Building" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Building"/>
+                <Property Name="Floor" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Floor"/>
+                <Property Name="Room" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Room"/>
+                <Property Name="Phone" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Phone"/>
+                <Property Name="Mobile" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Mobile"/>
+                <Property Name="Fax" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Fax"/>
+                <Property Name="Email" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="E-Mail"/>
+                <Property Name="WebSite" Type="Edm.String" Nullable="true" MaxLength="1280" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Web Site"/>
+                <Property Name="LanguageCode" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="LanguageCodeText" c4c:value-help="PartnerAddressLanguageCodeCollection" sap:label="Language"/>
+                <Property Name="LanguageCodeText" Type="Edm.String" Nullable="true" sap:label="Language Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="BestReachedByCode" Type="Edm.String" Nullable="true" MaxLength="3" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="BestReachedByCodeText" c4c:value-help="PartnerAddressBestReachedByCodeCollection" sap:label="Best Reached By"/>
+                <Property Name="BestReachedByCodeText" Type="Edm.String" Nullable="true" sap:label="Best Reached By Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="NormalisedPhone" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Normalized Phone"/>
+                <Property Name="NormalisedMobile" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Normalized Mobile"/>
+                <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+                <NavigationProperty Name="Partner" Relationship="c4codata.Partner_PartnerAddress" FromRole="PartnerAddress" ToRole="Partner"/>
+            </EntityType>
+            <EntityType Name="PartnerPrograms" c4c:parent-entity-type="Partner">
+                <Key>
+                    <PropertyRef Name="ObjectID"/>
+                </Key>
+                <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+                <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+                <Property Name="PartnerProgram" Type="Edm.String" Nullable="true" MaxLength="4" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:text="PartnerProgramText" c4c:value-help="PartnerProgramsPartnerProgramCollection" sap:label="Partner Program"/>
+                <Property Name="PartnerProgramText" Type="Edm.String" Nullable="true" sap:label="Partner Program Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="MembershipID" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Membership ID"/>
+                <Property Name="PartnerType" Type="Edm.String" Nullable="true" MaxLength="4" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:text="PartnerTypeText" c4c:value-help="PartnerProgramsPartnerTypeCollection" sap:label="Partner Type"/>
+                <Property Name="PartnerTypeText" Type="Edm.String" Nullable="true" sap:label="Partner Type Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="Status" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="StatusText" c4c:value-help="PartnerProgramsStatusCollection" sap:label="Status"/>
+                <Property Name="StatusText" Type="Edm.String" Nullable="true" sap:label="Status Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="AgreementStartDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Agreement Start Date" sap:display-format="Date"/>
+                <Property Name="AgreementEndDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Agreement End Date" sap:display-format="Date"/>
+                <NavigationProperty Name="PartnerProductDimensions" Relationship="c4codata.PartnerPrograms_PartnerProductDimensions" FromRole="PartnerPrograms" ToRole="PartnerProductDimensions"/>
+            </EntityType>
+            <EntityType Name="PartnerProductDimensions" c4c:parent-entity-type="PartnerPrograms">
+                <Key>
+                    <PropertyRef Name="ObjectID"/>
+                </Key>
+                <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+                <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+                <Property Name="DimensionStatus" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="DimensionStatusText" c4c:value-help="PartnerProductDimensionsDimensionStatusCollection" sap:label="Dimension Status"/>
+                <Property Name="DimensionStatusText" Type="Edm.String" Nullable="true" sap:label="Dimension Status Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="ProductID" Type="Edm.String" Nullable="false" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Product"/>
+                <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Start Date" sap:display-format="Date"/>
+                <Property Name="EndDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="End Date" sap:display-format="Date"/>
+                <NavigationProperty Name="PartnerPrograms" Relationship="c4codata.PartnerPrograms_PartnerProductDimensions" FromRole="PartnerProductDimensions" ToRole="PartnerPrograms"/>
+            </EntityType>
+            <EntityType Name="PartnerHasPartnerContact" c4c:parent-entity-type="Partner">
+                <Key>
+                    <PropertyRef Name="ObjectID"/>
+                </Key>
+                <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+                <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+                <Property Name="PartnerID" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Partner ID"/>
+                <Property Name="PartnerContactID" Type="Edm.String" Nullable="false" MaxLength="20" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Partner Contact ID"/>
+                <Property Name="MainIndicator" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Main"/>
+                <Property Name="DepartmentCode" Type="Edm.String" Nullable="true" MaxLength="4" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="DepartmentCodeText" c4c:value-help="PartnerHasPartnerContactDepartmentCodeCollection" sap:label="Department"/>
+                <Property Name="DepartmentCodeText" Type="Edm.String" Nullable="true" sap:label="Department Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="FunctionCode" Type="Edm.String" Nullable="true" MaxLength="4" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="FunctionCodeText" c4c:value-help="PartnerHasPartnerContactFunctionCodeCollection" sap:label="Function"/>
+                <Property Name="FunctionCodeText" Type="Edm.String" Nullable="true" sap:label="Function Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="VIPReasonCode" Type="Edm.String" Nullable="true" MaxLength="1" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="VIPReasonCodeText" c4c:value-help="PartnerHasPartnerContactVIPReasonCodeCollection" sap:label="VIP Contact"/>
+                <Property Name="VIPReasonCodeText" Type="Edm.String" Nullable="true" sap:label="VIP Contact Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="EntityLastChangedOn" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Entity Last Changed On"/>
+                <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+                <NavigationProperty Name="PartnerHasPartnerContactFunction" Relationship="c4codata.PartnerHasPartnerContact_PartnerHasPartnerContactFunction" FromRole="PartnerHasPartnerContact" ToRole="PartnerHasPartnerContactFunction"/>
+            </EntityType>
+            <EntityType Name="PartnerHasPartnerContactFunction" c4c:parent-entity-type="PartnerHasPartnerContact">
+                <Key>
+                    <PropertyRef Name="ObjectID"/>
+                </Key>
+                <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+                <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+                <Property Name="PartnerContactID" Type="Edm.String" Nullable="false" MaxLength="35" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Partner Contact ID"/>
+                <Property Name="ContactID" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Contact ID"/>
+                <Property Name="PartnerID" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Partner ID"/>
+                <Property Name="PartnerType" Type="Edm.String" Nullable="true" MaxLength="4" FixedLength="true" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:text="PartnerTypeText" c4c:value-help="PartnerHasPartnerContactFunctionPartnerTypeCollection" sap:label="Partner Type"/>
+                <Property Name="PartnerTypeText" Type="Edm.String" Nullable="true" sap:label="Partner Type Text" sap:creatable="false" sap:updatable="false" sap:filterable="true"/>
+                <Property Name="MainContact" Type="Edm.Boolean" Nullable="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Main Contact"/>
+                <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="Start Date" sap:display-format="Date"/>
+                <Property Name="EndDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:creatable="true" sap:updatable="true" sap:filterable="true" sap:label="End Date" sap:display-format="Date"/>
+            </EntityType>
+            <EntityType Name="PartnerSalesOrganisation" c4c:parent-entity-type="Partner">
+                <Key>
+                    <PropertyRef Name="ObjectID"/>
+                </Key>
+                <Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Object ID"/>
+                <Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Parent Object ID"/>
+                <Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:label="Entity Tag"/>
+                <Property Name="PartnerID" Type="Edm.String" Nullable="true" MaxLength="10" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" c4c:is-parent-internal-key="true" sap:label="Partner ID"/>
+                <Property Name="SalesOrganisationID" Type="Edm.String" Nullable="true" MaxLength="20" FixedLength="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Sales Organization ID"/>
+                <Property Name="SalesOrganisationUUID" Type="Edm.Guid" Nullable="true" sap:creatable="true" sap:updatable="false" sap:filterable="true" sap:label="Sales Organisation UUID"/>
+                <NavigationProperty Name="Partner" Relationship="c4codata.Partner_PartnerSalesOrganisation" FromRole="PartnerSalesOrganisation" ToRole="Partner"/>
+            </EntityType>
+            <EntityType Name="CodeList">
+                <Key>
+                    <PropertyRef Name="Code"/>
+                </Key>
+                <Property Name="Code" Type="Edm.String" Nullable="false" FixedLength="false" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Code"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" FixedLength="false" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Description"/>
+            </EntityType>
+            <EntityType Name="ContextualCodeList">
+                <Key>
+                    <PropertyRef Name="Context"/>
+                    <PropertyRef Name="Code"/>
+                </Key>
+                <Property Name="Code" Type="Edm.String" Nullable="false" FixedLength="false" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Code"/>
+                <Property Name="Context" Type="Edm.String" Nullable="false" FixedLength="false" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Context"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" FixedLength="false" sap:creatable="false" sap:updatable="false" sap:filterable="true" sap:label="Description"/>
+            </EntityType>
+            <Association Name="PartnerHasPartnerContact_PartnerHasPartnerContactFunction">
+                <End Type="c4codata.PartnerHasPartnerContact" Multiplicity="1" Role="PartnerHasPartnerContact"/>
+                <End Type="c4codata.PartnerHasPartnerContactFunction" Multiplicity="*" Role="PartnerHasPartnerContactFunction"/>
+            </Association>
+            <Association Name="PartnerPrograms_PartnerProductDimensions">
+                <End Type="c4codata.PartnerProductDimensions" Multiplicity="*" Role="PartnerProductDimensions"/>
+                <End Type="c4codata.PartnerPrograms" Multiplicity="1" Role="PartnerPrograms"/>
+            </Association>
+            <Association Name="Partner_PartnerAddress">
+                <End Type="c4codata.PartnerAddress" Multiplicity="*" Role="PartnerAddress"/>
+                <End Type="c4codata.Partner" Multiplicity="1" Role="Partner"/>
+            </Association>
+            <Association Name="Partner_PartnerAttachment">
+                <End Type="c4codata.Partner" Multiplicity="1" Role="Partner"/>
+                <End Type="c4codata.PartnerAttachment" Multiplicity="*" Role="PartnerAttachment"/>
+            </Association>
+            <Association Name="Partner_PartnerHasPartnerContact">
+                <End Type="c4codata.Partner" Multiplicity="1" Role="Partner"/>
+                <End Type="c4codata.PartnerHasPartnerContact" Multiplicity="*" Role="PartnerHasPartnerContact"/>
+            </Association>
+            <Association Name="Partner_PartnerPrograms">
+                <End Type="c4codata.Partner" Multiplicity="1" Role="Partner"/>
+                <End Type="c4codata.PartnerPrograms" Multiplicity="*" Role="PartnerPrograms"/>
+            </Association>
+            <Association Name="Partner_PartnerSalesOrganisation">
+                <End Type="c4codata.PartnerSalesOrganisation" Multiplicity="*" Role="PartnerSalesOrganisation"/>
+                <End Type="c4codata.Partner" Multiplicity="1" Role="Partner"/>
+            </Association>
+            <EntityContainer Name="c4codata" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="PartnerAddressBestReachedByCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerAddressCollection" EntityType="c4codata.PartnerAddress" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Partner Addresses"/>
+                <EntitySet Name="PartnerAddressCountryCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerAddressLanguageCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerAddressPOBoxDeviatingCountryCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerAddressPOBoxDeviatingStateCodeCollection" EntityType="c4codata.ContextualCodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerAddressStateCodeCollection" EntityType="c4codata.ContextualCodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerAddressTimeZoneCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerAttachmentCategoryCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerAttachmentCollection" EntityType="c4codata.PartnerAttachment" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Partner Attachments"/>
+                <EntitySet Name="PartnerAttachmentTypeCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerBestReachedByCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerCollection" EntityType="c4codata.Partner" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Partner"/>
+                <EntitySet Name="PartnerContactPermissionCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerCountryCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerHasPartnerContactCollection" EntityType="c4codata.PartnerHasPartnerContact" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Partner Contacts"/>
+                <EntitySet Name="PartnerHasPartnerContactDepartmentCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerHasPartnerContactFunctionCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerHasPartnerContactFunctionCollection" EntityType="c4codata.PartnerHasPartnerContactFunction" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Partner Contact Function"/>
+                <EntitySet Name="PartnerHasPartnerContactFunctionPartnerTypeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerHasPartnerContactVIPReasonCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerIndustrialSectorCodeCollection" EntityType="c4codata.ContextualCodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerLanguageCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerLegalFormCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerLifeCycleStatusCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerPOBoxDeviatingCountryCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerPOBoxDeviatingStateCodeCollection" EntityType="c4codata.ContextualCodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerPartnerABCClassificationCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerPartnerLevelCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerProductDimensionsCollection" EntityType="c4codata.PartnerProductDimensions" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Partner Product Dimensions"/>
+                <EntitySet Name="PartnerProductDimensionsDimensionStatusCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerProgramsCollection" EntityType="c4codata.PartnerPrograms" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Partner Programs"/>
+                <EntitySet Name="PartnerProgramsPartnerProgramCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerProgramsPartnerTypeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerProgramsStatusCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerSalesOrganisationCollection" EntityType="c4codata.PartnerSalesOrganisation" sap:creatable="true" sap:updatable="false" sap:deletable="true" sap:label="Partner Sales"/>
+                <EntitySet Name="PartnerStateCodeCollection" EntityType="c4codata.ContextualCodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <EntitySet Name="PartnerTimeZoneCodeCollection" EntityType="c4codata.CodeList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:semantics="fixed-values"/>
+                <AssociationSet Name="PartnerAddressCollection_PartnerCollection" Association="c4codata.Partner_PartnerAddress" sap:creatable="false" sap:updatable="false" sap:deletable="false">
+                    <End EntitySet="PartnerAddressCollection" Role="PartnerAddress"/>
+                    <End EntitySet="PartnerCollection" Role="Partner"/>
+                </AssociationSet>
+                <AssociationSet Name="PartnerCollection_PartnerAttachmentCollection" Association="c4codata.Partner_PartnerAttachment" sap:creatable="true" sap:updatable="false" sap:deletable="false">
+                    <End EntitySet="PartnerCollection" Role="Partner"/>
+                    <End EntitySet="PartnerAttachmentCollection" Role="PartnerAttachment"/>
+                </AssociationSet>
+                <AssociationSet Name="PartnerCollection_PartnerHasPartnerContactCollection" Association="c4codata.Partner_PartnerHasPartnerContact" sap:creatable="false" sap:updatable="false" sap:deletable="false">
+                    <End EntitySet="PartnerCollection" Role="Partner"/>
+                    <End EntitySet="PartnerHasPartnerContactCollection" Role="PartnerHasPartnerContact"/>
+                </AssociationSet>
+                <AssociationSet Name="PartnerCollection_PartnerProgramsCollection" Association="c4codata.Partner_PartnerPrograms" sap:creatable="true" sap:updatable="false" sap:deletable="false">
+                    <End EntitySet="PartnerCollection" Role="Partner"/>
+                    <End EntitySet="PartnerProgramsCollection" Role="PartnerPrograms"/>
+                </AssociationSet>
+                <AssociationSet Name="PartnerHasPartnerContactCollection_PartnerHasPartnerContactFunctionCollection" Association="c4codata.PartnerHasPartnerContact_PartnerHasPartnerContactFunction" sap:creatable="false" sap:updatable="false" sap:deletable="false">
+                    <End EntitySet="PartnerHasPartnerContactCollection" Role="PartnerHasPartnerContact"/>
+                    <End EntitySet="PartnerHasPartnerContactFunctionCollection" Role="PartnerHasPartnerContactFunction"/>
+                </AssociationSet>
+                <AssociationSet Name="PartnerProductDimensionsCollection_PartnerProgramsCollection" Association="c4codata.PartnerPrograms_PartnerProductDimensions" sap:creatable="false" sap:updatable="false" sap:deletable="false">
+                    <End EntitySet="PartnerProductDimensionsCollection" Role="PartnerProductDimensions"/>
+                    <End EntitySet="PartnerProgramsCollection" Role="PartnerPrograms"/>
+                </AssociationSet>
+                <AssociationSet Name="PartnerSalesOrganisationCollection_PartnerCollection" Association="c4codata.Partner_PartnerSalesOrganisation" sap:creatable="false" sap:updatable="false" sap:deletable="false">
+                    <End EntitySet="PartnerSalesOrganisationCollection" Role="PartnerSalesOrganisation"/>
+                    <End EntitySet="PartnerCollection" Role="Partner"/>
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
